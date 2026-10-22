@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 // fungsi agar output dapat menampilkan format rupiah dengan benar
