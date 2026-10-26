@@ -1,0 +1,33 @@
+MULAI
+    Buka file "siswa.txt"
+
+    IF file tidak ditemukan THEN
+        Tampilkan "File tidak ditemukan"
+        SELESAI
+    ENDIF
+
+    jumlah = 0
+
+    WHILE masih ada data AND jumlah < 1000
+        Baca nama, umur, nomor_registrasi
+        Simpan ke array siswa[jumlah]
+        jumlah = jumlah + 1
+    ENDWHILE
+
+    Tutup file
+
+    Input namaCari
+    ditemukan = FALSE
+
+    FOR i = 0 TO jumlah - 1
+        IF siswa[i].nama == namaCari THEN
+            Tampilkan data siswa
+            ditemukan = TRUE
+            BREAK
+        ENDIF
+    ENDFOR
+
+    IF ditemukan == FALSE THEN
+        Tampilkan "Nama siswa tidak ditemukan"
+    ENDIF
+SELESAI

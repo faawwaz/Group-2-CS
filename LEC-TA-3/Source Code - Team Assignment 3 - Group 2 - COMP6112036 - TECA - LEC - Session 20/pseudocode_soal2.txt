@@ -1,0 +1,12 @@
+FUNCTION factorial(n):
+    // validasi: faktorial tidak terdefinisi untuk n < 0
+    IF n < 0 THEN
+        RETURN error "Faktorial tidak terdefinisi untuk bilangan negatif"
+    ELSE IF n == 0 THEN
+        // base case
+        RETURN 1
+    ELSE
+        // recursive case
+        RETURN n * factorial(n - 1)
+    END IF
+END FUNCTION

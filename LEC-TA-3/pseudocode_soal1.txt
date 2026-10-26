@@ -1,0 +1,14 @@
+PROSEDUR Hanoi(n, asal, bantu, tujuan)
+    JIKA n = 1 MAKA
+        TULIS "Cakram 1: ", asal, " ke ", tujuan
+        KEMBALI
+    AKHIR JIKA
+
+    Hanoi(n - 1, asal, tujuan, bantu)
+    TULIS "Cakram ", n, ": ", asal, " ke ", tujuan
+    Hanoi(n - 1, bantu, asal, tujuan)
+AKHIR PROSEDUR
+
+MULAI
+    Hanoi(4, A, B, C)
+SELESAI
