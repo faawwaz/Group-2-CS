@@ -57,4 +57,10 @@ const char *pesanStatusFile(StatusFile status);
 int menuExit(const DataToko *data, const char *fileBuku,
              const char *fileHistory);
 
+
+
+/* Group 2 - Task 4: Muhammad Damar Alfharidzy (3002909630). */
+void hapusHistory(DataToko *data);
+
+
 #endif
