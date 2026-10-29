@@ -96,8 +96,7 @@ int main(void) {
                 break;
 
             case 8:
-                // TODO: ganti dengan nama fungsi sorting milik teman
-                // sortingBuku(&data);
+                sortingBuku(&data);
                 break;
 
             default:

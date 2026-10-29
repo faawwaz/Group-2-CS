@@ -62,4 +62,9 @@ int menuExit(const DataToko *data, const char *fileBuku,
 /* Group 2 - Task 4: Muhammad Damar Alfharidzy (3002909630). */
 void hapusHistory(DataToko *data);
 
+/* Group 2 - Task 5: Fawwaz. */
+void bubbleSortNama(Buku buku[], int jumlahBuku);
+void selectionSortHarga(Buku buku[], int jumlahBuku);
+void sortingBuku(DataToko *data);
+
 #endif
