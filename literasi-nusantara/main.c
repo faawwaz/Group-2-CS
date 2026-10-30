@@ -59,8 +59,7 @@ int main(void) {
 
         switch (pilihan) {
             case 1:
-                // TODO: ganti dengan nama fungsi teman
-                // tambahBuku(&data);
+                tambahBuku(&data);
                 break;
 
             case 2:
@@ -69,8 +68,7 @@ int main(void) {
                 break;
 
             case 3:
-                // TODO: ganti dengan nama fungsi teman
-                // viewBuku(&data);
+                viewBuku(&data);
                 break;
 
             case 4:
@@ -78,8 +76,7 @@ int main(void) {
                 break;
 
             case 5:
-                // TODO: ganti dengan fungsi delete buku milik teman
-                // deleteBuku(&data);
+                hapusBuku(&data);
                 break;
 
             case 6:
