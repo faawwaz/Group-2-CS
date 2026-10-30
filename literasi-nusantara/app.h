@@ -67,4 +67,10 @@ void bubbleSortNama(Buku buku[], int jumlahBuku);
 void selectionSortHarga(Buku buku[], int jumlahBuku);
 void sortingBuku(DataToko *data);
 
+// Group 2 - Task 2: Zaveer
+void tambahBuku(DataToko *data);
+void viewBuku(const DataToko *data);
+void hapusBuku(DataToko *data);
+void tampilkanDaftarBuku(const DataToko *data);
+
 #endif
