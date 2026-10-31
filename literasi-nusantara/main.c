@@ -18,8 +18,9 @@ int main(void) {
     int pilihan = 0;
     int selesai = 0;
     StatusFile status;
-    int c;
     int hasilExit;
+    char input[20];
+    char tambahan;
 
 
     // Inisialisasi data toko
@@ -44,16 +45,11 @@ int main(void) {
         printf("8. Sort Buku\n");
         printf("==========================\n");
         printf("Pilih menu (1-8): ");
-        
 
-        if (scanf("%d", &pilihan) != 1) {
+        if (fgets(input, sizeof(input), stdin) == NULL) {
+            pilihan = 6;
+        } else if (sscanf(input, "%d %c", &pilihan, &tambahan) != 1) {
             printf("Input tidak valid! Masukkan angka.\n");
-
-            // Membersihkan sisa input
-            while ((c = getchar()) != '\n' && c != EOF) {
-                /* Buang karakter */
-            }
-
             continue;
         }
 
@@ -63,8 +59,7 @@ int main(void) {
                 break;
 
             case 2:
-                // TODO: ganti dengan nama fungsi teman
-                // viewHistory(&data);
+                viewHistory(&data);
                 break;
 
             case 3:
@@ -88,8 +83,7 @@ int main(void) {
                 break;
 
             case 7:
-                // TODO: ganti dengan fungsi input transaksi milik teman
-                // inputTransaksi(&data);
+                inputTransaksi(&data);
                 break;
 
             case 8:

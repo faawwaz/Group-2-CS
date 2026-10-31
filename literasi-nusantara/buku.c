@@ -39,6 +39,8 @@ void tambahBuku(DataToko *data)
 {
     Buku baru;
     int nomor, hasil;
+    char input[50];
+    char tambahan;
 
     if (data->jumlahBuku >= MAX_BUKU) {
         printf("Data buku penuh.\n");
@@ -63,9 +65,9 @@ void tambahBuku(DataToko *data)
 
     do {
         printf("Harga buku : ");
-        hasil = scanf("%lf", &baru.harga);
-        bersihkanInput();
-        if (hasil == EOF) return;
+        if (fgets(input, sizeof(input), stdin) == NULL) return;
+        if (strchr(input, '\n') == NULL) bersihkanInput();
+        hasil = sscanf(input, "%lf %c", &baru.harga, &tambahan);
         if (hasil != 1 || !(baru.harga > 0)) printf("Harga tidak valid! Masukkan angka lebih dari 0.\n");
     } while (hasil != 1 || !(baru.harga > 0));
 
@@ -95,6 +97,8 @@ void viewBuku(const DataToko *data)
 void hapusBuku(DataToko *data)
 {
     int index, i;
+    char input[50];
+    char tambahan;
 
     if (data->jumlahBuku == 0) {
         printf("Tidak ada data buku untuk dihapus.\n");
@@ -105,12 +109,13 @@ void hapusBuku(DataToko *data)
     tampilkanDaftarBuku(data);
 
     printf("\nMasukkan nomor buku yang ingin dihapus (1-%d): ", data->jumlahBuku);
-    if (scanf("%d", &index) != 1) {
-        printf("Input tidak valid. Masukkan angka.\n");
-        bersihkanInput();
+    if (fgets(input, sizeof(input), stdin) == NULL) {
         return;
     }
-    bersihkanInput();
+    if (sscanf(input, "%d %c", &index, &tambahan) != 1) {
+        printf("Input tidak valid. Masukkan angka.\n");
+        return;
+    }
 
     if (index < 1 || index > data->jumlahBuku) {
         printf("Nomor buku tidak valid.\n");
